@@ -1,0 +1,231 @@
+/* line 1, app/assets/stylesheets/beautiful-scaffold.css.scss */
+.ar, table td.ar, table th.ar {
+  text-align: right;
+}
+
+/* line 4, app/assets/stylesheets/beautiful-scaffold.css.scss */
+.al, table td.al, table th.al {
+  text-align: left;
+}
+
+/* line 7, app/assets/stylesheets/beautiful-scaffold.css.scss */
+.ac, table td.ac, table th.ac {
+  text-align: center;
+}
+
+/* line 10, app/assets/stylesheets/beautiful-scaffold.css.scss */
+.ab, table td.ab, table th.ab {
+  vertical-align: bottom;
+}
+
+/* line 13, app/assets/stylesheets/beautiful-scaffold.css.scss */
+.am, table td.am, table th.am {
+  vertical-align: middle;
+}
+
+/* line 16, app/assets/stylesheets/beautiful-scaffold.css.scss */
+.at, table td.at, table th.at {
+  vertical-align: top;
+}
+
+/* http://www.alessioatzeni.com/blog/css3-loading-animation-loop/ */
+/* line 24, app/assets/stylesheets/beautiful-scaffold.css.scss */
+.loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  z-index: 1000;
+}
+
+/* line 32, app/assets/stylesheets/beautiful-scaffold.css.scss */
+.circle {
+  background-color: rgba(0, 0, 0, 0);
+  border: 5px solid #0088CC;
+  opacity: .9;
+  border-right: 5px solid rgba(0, 0, 0, 0);
+  border-left: 5px solid rgba(0, 0, 0, 0);
+  border-radius: 50px;
+  box-shadow: 0 0 35px #0060CC;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  -moz-animation: spinPulse 1s infinite ease-in-out;
+  -webkit-animation: spinPulse 1s infinite linear;
+}
+
+/* line 46, app/assets/stylesheets/beautiful-scaffold.css.scss */
+.circle1 {
+  background-color: rgba(0, 0, 0, 0);
+  border: 5px solid #0088CC;
+  opacity: .9;
+  border-left: 5px solid rgba(0, 0, 0, 0);
+  border-right: 5px solid rgba(0, 0, 0, 0);
+  border-radius: 50px;
+  box-shadow: 0 0 15px #0060CC;
+  width: 30px;
+  height: 30px;
+  margin: 0 auto;
+  position: relative;
+  top: -40px;
+  -moz-animation: spinoffPulse 1s infinite linear;
+  -webkit-animation: spinoffPulse 1s infinite linear;
+}
+
+@-webkit-keyframes spinPulse {
+  0% {
+    -webkit-transform: rotate(160deg);
+    opacity: 0;
+    box-shadow: 0 0 1px #0060CC;
+  }
+  50% {
+    -webkit-transform: rotate(145deg);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: rotate(-320deg);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes spinoffPulse {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+/* line 98, app/assets/stylesheets/beautiful-scaffold.css.scss */
+label.bs-label-ib {
+  display: inline-block;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+/* line 103, app/assets/stylesheets/beautiful-scaffold.css.scss */
+label.bs-label-ib input {
+  margin-right: 3px;
+  margin-top: 0;
+}
+
+/* Fixed left menu */
+/*
+.fixed {
+  width: 200px;
+  float: left;
+}
+.fixed + div {
+  margin-left: 200px;
+  padding-left:20px;
+  overflow: hidden;
+  min-height:500px;
+  background:white;
+}
+body {
+  padding-top:70px;
+}
+@media (max-width: 979px) {
+  .fixed + div {
+    margin-left: 0;
+    padding:10px;
+  }
+  body {
+    padding-top: 35px;
+  }
+}
+*/
+/* line 134, app/assets/stylesheets/beautiful-scaffold.css.scss */
+html, body {
+  height: 100%;
+}
+
+/*
+.filler:after{
+  background-color:inherit;
+  bottom: 0;
+  content: "";
+  height: auto;
+  min-height: 100%;
+  left: 0;
+  margin:inherit;
+  right: 0;
+  position: absolute;
+  top: 0;
+  width: inherit;
+  z-index: -1;
+}
+*/
+/* line 154, app/assets/stylesheets/beautiful-scaffold.css.scss */
+#jstree-marker-line {
+  pointer-events: none;
+}
+
+/* Search & filter  */
+/* line 157, app/assets/stylesheets/beautiful-scaffold.css.scss */
+.search-and-filter div.panel-group {
+  margin-bottom: 0;
+}
+
+/* line 160, app/assets/stylesheets/beautiful-scaffold.css.scss */
+.search-and-filter div.panel-group .accordion-toggle {
+  padding-left: 0;
+}
+
+/* line 163, app/assets/stylesheets/beautiful-scaffold.css.scss */
+.search-and-filter div.panel-group .panel.panel-default {
+  border: 0;
+}
+
+/* line 166, app/assets/stylesheets/beautiful-scaffold.css.scss */
+.search-and-filter div.panel-group .panel-body {
+  padding: 0;
+  margin-top: 0;
+}
+
+/* line 170, app/assets/stylesheets/beautiful-scaffold.css.scss */
+.search-and-filter h3 {
+  margin-top: 0;
+}
+
+/* line 174, app/assets/stylesheets/beautiful-scaffold.css.scss */
+#modal-columns div.modal-body label {
+  display: inline-block;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 20px;
+}
+
+/*
+.search-and-filter .form-group label{
+  margin-bottom: 0;
+  margin-top: 5px;
+}
+*/
+/*
+div.filler.show-menu{
+  margin-left: 200px;
+}
+div.fixed.show-menu{
+  display: block;
+}
+div.filler.hide-menu{
+  margin-left: 0;
+}
+div.fixed.hide-menu{
+  display: none !important;
+}
+*/
+/* line 202, app/assets/stylesheets/beautiful-scaffold.css.scss */
+.title-index {
+  font-size: 30px;
+}
+
+/* line 206, app/assets/stylesheets/beautiful-scaffold.css.scss */
+.overview-color {
+  display: inline-block;
+  width: 40px;
+  height: 24px;
+}
