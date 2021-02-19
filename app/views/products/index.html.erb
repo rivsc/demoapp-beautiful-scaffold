@@ -12,7 +12,7 @@
   </div>
 </div>
 
-<%= render :partial => "layouts/mass_inserting", :locals => { :engine => '', :namespace => '', :model_name => 'product', :model_columns => ['price','color','description','family'] } %>
+<%= render :partial => "layouts/mass_inserting", :locals => { :engine => '', :namespace => '', :model_name => 'product', :model_columns => ['color','description','family','my_date','my_datetime','price'] } %>
 
 <%# Set your scopes below (string in array) %>
 <% scopes = [] %>
@@ -61,7 +61,7 @@
         </div>
       </div>
 
-      <%= render :partial => "layouts/modal_columns", :locals => { :engine_name => '', :model_name => "product", :model_columns => ['price','color','description','family','created_at','updated_at'] } %>
+      <%= render :partial => "layouts/modal_columns", :locals => { :engine_name => '', :model_name => "product", :model_columns => ['color','description','family','my_date','my_datetime','price','created_at','updated_at'] } %>
 
       <table class="table table-striped table-bordered table-sm">
         <thead>
@@ -72,9 +72,6 @@
             <th id="checkall-div" data-present-title="<%= t(:help_checkall, :default => "Check all elements") %>" data-present-description="<%= t(:help_checkall_description, :default => "Check all elements visible on the page") %>" data-present-order="3">
               <%= check_box_tag :checkall, '' %>
             </th>
-            <th <%= visible_column("product", "price") %> class="bs-col-price">
-              <%= sorting_header("product", "price", "") %>
-            </th>
             <th <%= visible_column("product", "color") %> class="bs-col-color">
               <%= sorting_header("product", "color", "") %>
             </th>
@@ -83,6 +80,15 @@
             </th>
             <th <%= visible_column("product", "family") %> class="bs-col-family">
               <%= sorting_header("product", "family_id", "") %>
+            </th>
+            <th <%= visible_column("product", "my_date") %> class="bs-col-my_date">
+              <%= sorting_header("product", "my_date", "") %>
+            </th>
+            <th <%= visible_column("product", "my_datetime") %> class="bs-col-my_datetime">
+              <%= sorting_header("product", "my_datetime", "") %>
+            </th>
+            <th <%= visible_column("product", "price") %> class="bs-col-price">
+              <%= sorting_header("product", "price", "") %>
             </th>
 
             <!-- Beautiful_scaffold - AddField - Header - Do not remove -->
@@ -105,11 +111,8 @@
           <tr class="line-<%= cycle("1","2") %>">
             <td class="ar"><%= product.id %></td>
             <td><%= check_box_tag "ids[]",product.id, false, :class => 'cbbatch' %></td>
-            <td <%= visible_column("product", "price") %> class="bs-col-price <%= align_attribute("price") %>">
-                <%= number_to_currency(product.price, :locale => I18n.locale) %>
-            </td>
             <td <%= visible_column("product", "color") %> class="bs-col-color <%= align_attribute("color") %>">
-                <%= product.color %>
+                <span class="overview-color" style="background-color:<%= product.color %>;">&nbsp;</span>
             </td>
             <td <%= visible_column("product", "description") %> class="bs-col-description <%= align_attribute("wysiwyg") %>">
                 <%= product.description %>
@@ -120,6 +123,15 @@
                 <% else %>
                   <%= t(:any, :default => "Any") %>
                 <% end %>
+            </td>
+            <td <%= visible_column("product", "my_date") %> class="bs-col-my_date <%= align_attribute("date") %>">
+                <%= product.my_date %>
+            </td>
+            <td <%= visible_column("product", "my_datetime") %> class="bs-col-my_datetime <%= align_attribute("datetime") %>">
+                <%= product.my_datetime %>
+            </td>
+            <td <%= visible_column("product", "price") %> class="bs-col-price <%= align_attribute("price") %>">
+                <%= number_to_currency(product.price, :locale => I18n.locale) %>
             </td>
 <!-- Beautiful_scaffold - AddField - Column - Do not remove -->
             <td <%= visible_column("product", "created_at") %> class="bs-col-created_at <%= align_attribute("datetime") %>">
@@ -162,9 +174,11 @@
       <div class="card-header"><%= t("search_and_filter", :default => "Search & filter") %></div>
       <div class="card-body">
         <div class="card-text">
-                <%= ransack_field("product", "price", f, "Price") %>
-      <%= ransack_field("product", "description", f, "Description") %>
+                <%= ransack_field("product", "description", f, "Description") %>
       <%= ransack_field("product", "family_id", f, "Family") %>
+      <%= ransack_field("product", "my_date", f, "My_date") %>
+      <%= ransack_field("product", "my_datetime", f, "My_datetime") %>
+      <%= ransack_field("product", "price", f, "Price") %>
 
           <!-- Beautiful_scaffold - AddField - Search - Do not remove -->
           <div class="panel-group">

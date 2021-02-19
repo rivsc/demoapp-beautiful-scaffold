@@ -1,12 +1,8 @@
 <h2><%= t(:show, :default => "Show") %> <%= t('app.models.product.bs_caption', :default => 'product') %></h2>
 
   <p>
-    <b><%= t('app.models.product.bs_attributes.price', :default => 'price') %>:</b>
-      <%= number_to_currency(@product.price) %>
-  </p>
-  <p>
     <b><%= t('app.models.product.bs_attributes.color', :default => 'color') %>:</b>
-      <%= @product.color %>
+      <span class="overview-color" style="background-color:<%= @product.color %>;">&nbsp;</span>
   </p>
   <p>
     <b><%= t('app.models.product.bs_attributes.description', :default => 'description') %>:</b>
@@ -15,6 +11,18 @@
   <p>
     <b><%= t('app.models.product.bs_attributes.family', :default => 'family') %>:</b>
       <%= (@product.family.nil? ? "" : @product.family.caption) %>
+  </p>
+  <p>
+    <b><%= t('app.models.product.bs_attributes.my_date', :default => 'my_date') %>:</b>
+      <%= @product.my_date %>
+  </p>
+  <p>
+    <b><%= t('app.models.product.bs_attributes.my_datetime', :default => 'my_datetime') %>:</b>
+      <%= @product.my_datetime %>
+  </p>
+  <p>
+    <b><%= t('app.models.product.bs_attributes.price', :default => 'price') %>:</b>
+      <%= number_to_currency(@product.price) %>
   </p>
 
 <!-- Beautiful_scaffold - AddField - Field - Do not remove -->
