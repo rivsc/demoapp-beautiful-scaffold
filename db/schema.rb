@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_18_212317) do
+ActiveRecord::Schema.define(version: 2021_02_19_212317) do
 
   create_table "families", force: :cascade do |t|
     t.string "name"
@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(version: 2021_02_18_212317) do
     t.text "description_fulltext"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.date "my_date"
+    t.datetime "my_datetime"
     t.index ["family_id"], name: "index_products_on_family_id"
   end
 

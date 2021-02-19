@@ -22,6 +22,6 @@ class Product < ApplicationRecord
   end
 
   def self.permitted_attributes
-    return :family_id,:price,:color,:description_typetext,:description,:family_id
+    return :family_id,:price,:color,:description_typetext,:description,:family_id,:my_date,:my_datetime
   end
 end
